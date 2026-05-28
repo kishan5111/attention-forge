@@ -2,7 +2,7 @@
 
 **Understand, implement, visualize, and benchmark modern LLM attention.**
 
-![Attention Forge overview](image/README/1779976678175.png)
+![Attention Forge overview](assets/images/attention_forge_overview.png)
 
 Attention Forge is a from-scratch lab for attention mechanisms used in modern
 LLM inference, with a strong focus on KV cache, prefill/decode behavior, memory
