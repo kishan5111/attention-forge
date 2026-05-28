@@ -2,6 +2,8 @@
 
 **Understand, implement, visualize, and benchmark modern LLM attention.**
 
+![Attention Forge overview](image/README/1779976678175.png)
+
 Attention Forge is a from-scratch lab for attention mechanisms used in modern
 LLM inference, with a strong focus on KV cache, prefill/decode behavior, memory
 movement, and attention kernels. The repo focuses on the parts that are hard to
@@ -45,19 +47,19 @@ Each attention variant should answer the same core questions:
 The repo focuses on real mechanisms used in modern LLMs or described in model
 releases and papers.
 
-| Mechanism                    | Main idea                                                                  |
-| ---------------------------- | -------------------------------------------------------------------------- |
-| Single-head attention        | Baseline attention path using one Q/K/V set and scaled dot-product scoring |
-| Multi-Head Attention         | Store separate K/V per query head                                          |
-| Multi-Query Attention        | Share one K/V head across many query heads                                 |
-| Grouped-Query Attention      | Share fewer K/V heads across groups of query heads                         |
-| Multi-Head Latent Attention  | Store compressed latent cache state instead of full per-head K/V tensors   |
-| Sliding-window attention     | Restrict attention to recent tokens                                        |
-| Sink-token attention         | Always keep selected early tokens visible                                  |
-| Block sparse attention       | Attend to selected blocks instead of every previous token                  |
-| DeepSeek sparse attention    | Select useful prior context before attention reads K/V                     |
-| Compressed sparse attention  | Compress context into blocks, score blocks, and attend to selected entries |
-| MiniMax attention            | Track sparse/linear attention mechanisms from MiniMax source material      |
+| Mechanism                   | Main idea                                                                  |
+| --------------------------- | -------------------------------------------------------------------------- |
+| Single-head attention       | Baseline attention path using one Q/K/V set and scaled dot-product scoring |
+| Multi-Head Attention        | Store separate K/V per query head                                          |
+| Multi-Query Attention       | Share one K/V head across many query heads                                 |
+| Grouped-Query Attention     | Share fewer K/V heads across groups of query heads                         |
+| Multi-Head Latent Attention | Store compressed latent cache state instead of full per-head K/V tensors   |
+| Sliding-window attention    | Restrict attention to recent tokens                                        |
+| Sink-token attention        | Always keep selected early tokens visible                                  |
+| Block sparse attention      | Attend to selected blocks instead of every previous token                  |
+| DeepSeek sparse attention   | Select useful prior context before attention reads K/V                     |
+| Compressed sparse attention | Compress context into blocks, score blocks, and attend to selected entries |
+| MiniMax attention           | Track sparse/linear attention mechanisms from MiniMax source material      |
 
 ## KV Cache Lens
 
