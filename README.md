@@ -125,19 +125,20 @@ makes that cost visible.
 The notebooks are the main learning path. They are self-contained and build the
 idea before the cleaned implementation moves into package code.
 
-| Notebook                                                                                                    | Focus                                                            |
-| ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [01_attention_core.ipynb](notebooks/01_attention_core.ipynb)                                                   | Q/K/V, vectorized attention, prefill/decode cache contract       |
-| [02_multi_head_attention.ipynb](notebooks/02_multi_head_attention.ipynb)                                       | MHA baseline with full KV heads                                  |
-| [03_multi_query_attention.ipynb](notebooks/03_multi_query_attention.ipynb)                                     | MQA with one shared KV head                                      |
-| [04_grouped_query_attention.ipynb](notebooks/04_grouped_query_attention.ipynb)                                 | GQA head grouping and KV-head mapping                            |
-| [05_kv_cache_memory_math.ipynb](notebooks/05_kv_cache_memory_math.ipynb)                                       | KV memory, read/write cost, variant memory comparison            |
-| [06_multi_head_latent_attention.ipynb](notebooks/06_multi_head_latent_attention.ipynb)                         | MLA-style latent cache                                           |
-| [07_deepseek_v32_sparse_attention.ipynb](notebooks/07_deepseek_v32_sparse_attention.ipynb)                     | DeepSeek V3.2-style sparse selection                             |
-| [08_deepseek_v4_compressed_sparse_attention.ipynb](notebooks/08_deepseek_v4_compressed_sparse_attention.ipynb) | DeepSeek V4-style compressed sparse attention                    |
-| [09_minimax_attention.ipynb](notebooks/09_minimax_attention.ipynb)                                             | MiniMax attention mechanisms from source material                |
-| [10_attention_variant_comparison.ipynb](notebooks/10_attention_variant_comparison.ipynb)                       | Cross-variant shape, cache, read-cost, and complexity comparison |
-| [11_triton_attention_kernel_intro.ipynb](notebooks/11_triton_attention_kernel_intro.ipynb)                     | Triton decode-attention kernel path                              |
+| Notebook                                | Focus                                                   |
+| --------------------------------------- | ------------------------------------------------------- |
+| `01A_attention_core_from_scratch.ipynb` | Single-head attention from math to Torch SDPA           |
+| `01B_attention_core_triton.ipynb`       | Dot product, matmul, softmax, and masking in Triton     |
+| `02A_multi_head_attention_torch.ipynb`  | MHA tensor layout, projection, KV cache, and profiling  |
+| `02B_multi_head_attention_triton.ipynb` | MHA kernel shape, blocking, masking, loads, and stores  |
+| `03A_multi_query_attention_torch.ipynb` | MQA with shared KV heads and decode-cache savings       |
+| `03B_multi_query_attention_triton.ipynb` | MQA kernel layout and reduced KV reads                  |
+| `04A_grouped_query_attention_torch.ipynb` | GQA grouping, query-to-KV-head mapping, and cache math |
+| `04B_grouped_query_attention_triton.ipynb` | GQA kernel layout and grouped KV reads                |
+| `05A_kv_cache_memory_and_decode.ipynb`  | KV-cache memory, read/write cost, and decode behavior   |
+| `05B_kv_cache_triton_memory_access.ipynb` | KV-cache loads, memory coalescing, and decode access  |
+| `06A_multi_head_latent_attention_torch.ipynb` | MLA-style latent cache and reconstruction path    |
+| `06B_multi_head_latent_attention_triton.ipynb` | MLA-style kernel memory path and decode reads    |
 
 ## Visual Preview
 
